@@ -1,4 +1,4 @@
-let textValues = {};
+let textValues;
 let json_Response;
 function processForm(form){
     let inputs = form.getElementsByTagName("input");
@@ -9,9 +9,10 @@ function processForm(form){
         textValues[inputs[x].name] = inputs[x].value;
     }
     checkUser();
-    /*
-    document.getElementById("loginform").style.display="none";
-    document.getElementById("game").style.display="block";*/
+    login_form = document.getElementById("loginform");
+    game_ui = document.getElementById("game");
+    login_form.setAttribute('class', 'hidden');
+    game_ui.setAttribute('class', 'show');
 }
 
 function checkUser(){
@@ -27,10 +28,9 @@ function checkUser(){
     }
     req.open("POST", url);
     req.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    console.log(textValues)
     req.send(JSON.stringify(textValues));
-    console.log(JSON.stringify(textValues))
+    console.log(json_Response)
 }
 
 
-//window.setInterval(checkUser,5000);
+window.setInterval(checkUser,5000);
