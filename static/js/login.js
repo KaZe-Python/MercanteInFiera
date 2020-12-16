@@ -9,6 +9,9 @@ function processForm(form){
         textValues[inputs[x].name] = inputs[x].value;
     }
     checkUser();
+    /*
+    document.getElementById("loginform").style.display="none";
+    document.getElementById("game").style.display="block";*/
 }
 
 function checkUser(){
@@ -18,17 +21,16 @@ function checkUser(){
         if(req.readyState == XMLHttpRequest.DONE){
             if(json_Response !== req.responseText){
                 json_Response = req.responseText;
+                //console.log(json_Response)
             }else{}
         }
     }
     req.open("POST", url);
-    req.responseType("json");
     req.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    console.log(textValues)
     req.send(JSON.stringify(textValues));
+    console.log(JSON.stringify(textValues))
 }
 
-function hypotetical(){
-    //Call this one
-}
 
-window.setInterval(checkUser,5000);
+//window.setInterval(checkUser,5000);

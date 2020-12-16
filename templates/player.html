@@ -1,9 +1,21 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title> Play - MiF</title>
+        <title> Login Form - MiF </title>
+        <script src="/static/js/login.js"></script>
     </head>
     <body>
-        <p>Play Page</p>
+        <div id="loginform" name="loginform">
+            <form name="form" onsubmit="processForm(this)">
+                <label for="name">Nome:</label><br>
+                <input type="text" id="name" name="name"><br>
+                <label for="surn">Cognome:</label><br>
+                <input type="text" id="surn" name="surn"><br>
+                <input type="submit" value="Accedi">
+            </form>
+        </div>
+        <div id="game" name="game">
+            <p>{{textValues}}</p>
+        </div>
     </body>
 </html>
