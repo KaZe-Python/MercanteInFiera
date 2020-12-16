@@ -5,3 +5,6 @@ def _play():
 
 def _admin():
     return render_template('admin.html')
+
+def _form():
+    return render_template('form.html')
