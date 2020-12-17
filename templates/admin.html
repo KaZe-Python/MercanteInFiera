@@ -2,8 +2,16 @@
 <html>
     <head>
         <title> Admin - MiF</title>
+        <script src="/static/js/form_animation.js"></script>
+        <link rel="stylesheet" href="/static/css/admin.css">
+        <link rel="stylesheet" href="/static/css/form.css">
     </head>
     <body>
-        <p>Admin Page</p>
+        <div class="admin-panel" id="panel">
+            <p class="admin-panel"> Pannello Admin - MiF </p>
+            <form method="post" action="/static/php/handler.php">
+                <input type="submit" value="Distribuisci Carte">
+            </form>
+        </div>
     </body>
 </html>
