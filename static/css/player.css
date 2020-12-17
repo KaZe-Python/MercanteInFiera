@@ -4,3 +4,18 @@
 .hidden{
     display: none;
 }
+
+.img_btn{
+    display: inline-block;
+    height: 134px;
+    padding: 0;
+    margin: 0;
+    vertical-align: top;
+    width: 104px;
+}
+
+#close-CSS{
+    background-size: 100px 130px;
+    height: 134px;
+    width: 104px;
+}

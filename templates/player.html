@@ -7,7 +7,7 @@
     </head>
     <body>
         <div id="loginform" class="show" name="loginform">
-            <form name="form" onsubmit="processForm(this)">
+            <form name="form" id="form">
                 <label for="name">Nome:</label><br>
                 <input type="text" id="name" name="name"><br>
                 <label for="surn">Cognome:</label><br>
@@ -16,7 +16,7 @@
             </form>
         </div>
         <div id="game" class="hidden" name="game">
-            <p>{{textValues}}</p>
+            <button id="close-CSS" class="img_btn"></button>
         </div>
     </body>
 </html>

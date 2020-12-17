@@ -2,15 +2,16 @@
 <html>
     <head>
         <title> Admin - MiF</title>
-        <script src="/static/js/form_animation.js"></script>
+        <script src="/static/js/comunicator.js"></script>
+        <script src="/static/js/jquery-3.5.1.min.js"></script>
         <link rel="stylesheet" href="/static/css/admin.css">
-        <link rel="stylesheet" href="/static/css/form.css">
     </head>
     <body>
         <div class="admin-panel" id="panel">
             <p class="admin-panel"> Pannello Admin - MiF </p>
-            <form method="post" action="/static/php/handler.php">
-                <input type="submit" value="Distribuisci Carte">
+            <form class="admin-panel">
+                <button type="submit" class="button" name="deal" value="deal">Distribuisci Carte</button>
+                <button type="submit" class="button" name="dealb" value="dealb">Carte Morte</button>
             </form>
         </div>
     </body>
