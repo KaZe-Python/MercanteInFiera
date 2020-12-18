@@ -1,5 +1,5 @@
 window.addEventListener('load', function(){
-    function fetchDataFromAPI(){
+    function PostRequestAPI(){
         const thisForm = document.getElementById('form');
         thisForm.addEventListener('submit', async function(e){
             e.preventDefault();
@@ -9,8 +9,25 @@ window.addEventListener('load', function(){
                 body: JSON.stringify(Object.fromEntries(formData))
             });
             const result = await response.json();
-            console.log(result)
+            const user = JSON.parse(result.user);
+            if(user){
+                let _div = document.getElementById('loginform');
+                let div = document.getElementById('game');
+                if(_div.style.display === "none"){
+                    if(div.style.display === "none"){
+                        div.style.display = "block";
+                    }else{
+                        ;
+                    }
+                }else{
+                    _div.style.display = "none";
+                    div.style.display = "block";
+                }
+            }
+            console.log(user)
         });
     }
+    PostRequestAPI();
     
 });
+
