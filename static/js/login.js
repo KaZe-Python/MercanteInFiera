@@ -31,3 +31,9 @@ window.addEventListener('load', function(){
     
 });
 
+/* Makes a post request to my API
+    if the user exist, the code is 400 
+    and I'll now that I should check which
+    card the player has, else if the user
+    doesn't exist the backend will make
+    the user without any cards */
