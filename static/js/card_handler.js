@@ -1,6 +1,7 @@
 window.addEventListener('load', function(){
+    /*
     function GetRequestAPI(){
-        let cardButton = document.getElementById("close-CSS");
+        let cardButton = document.getElementsByClassName("img_btn");
         let response;
         cardButton.addEventListener('click', async function(e){
             e.preventDefault();
@@ -9,6 +10,15 @@ window.addEventListener('load', function(){
                 .then(json => response);
         });
         console.log(response);
+    }
+    GetRequestAPI();*/
+    function GetRequestAPI(){
+        let cards = document.getElementsByClassName('card');
+        for (let i = 0, len = cards.length; i < len; i++){
+            cards[i].onclick = function(){
+                confirm("Card Clicked");
+            }
+        }
     }
     GetRequestAPI();
 });
