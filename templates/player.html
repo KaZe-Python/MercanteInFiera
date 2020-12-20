@@ -3,9 +3,9 @@
     <head>
         <title> Login Form - MiF </title>
         <script src="/static/js/login.js"></script>
-        <script src="/static/js/card_click_func.js"></script>
         <script src="/static/js/getDataFromAPI.js"></script>
-        <script src="/static/js/requirejs.js"></script>
+        <script src="/static/js/cardShowHandler.js"></script>
+        <script src="/static/js/card_click_func.js"></script>
         <link rel="stylesheet" href="/static/css/player.css">
     </head>
     <body>
@@ -19,6 +19,9 @@
             </form>
         </div>
         <div id="game" class="hidden" name="game">
+            <p id="name_dis"></p>
+            <p id="surn_dis"></p>
+            <p id="id_dis"></p>
             <input type="image" src="/static/img/qh.jpeg" name="qh" height="120" width="90" class="card">
         </div>
     </body>

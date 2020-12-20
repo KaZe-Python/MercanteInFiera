@@ -1,3 +1,10 @@
+/* Makes a post request to my API
+    if the user exist, the code is 400 
+    and I'll now that I should check which
+    card the player has, else if the user
+    doesn't exist the backend will make
+    the user without any cards */
+    
 window.addEventListener('load', function(){
     function PostRequestAPI(){
         const thisForm = document.getElementById('form');
@@ -25,15 +32,9 @@ window.addEventListener('load', function(){
                 }
             }
             console.log(user)
+            window.user = user;
         });
     }
     PostRequestAPI();
     
 });
-
-/* Makes a post request to my API
-    if the user exist, the code is 400 
-    and I'll now that I should check which
-    card the player has, else if the user
-    doesn't exist the backend will make
-    the user without any cards */
