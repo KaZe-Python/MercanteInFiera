@@ -18,17 +18,11 @@ window.addEventListener('load', function(){
             const result = await response.json();
             const user = JSON.parse(result.user);
             if(user){
-                let _div = document.getElementById('loginform');
-                let div = document.getElementById('game');
-                if(_div.style.display === "none"){
-                    if(div.style.display === "none"){
-                        div.style.display = "block";
-                    }else{
-                        ;
-                    }
+                let div = document.getElementById('loginform');
+                if(div.className === "show"){
+                    div.className = "hidden";
                 }else{
-                    _div.style.display = "none";
-                    div.style.display = "block";
+                    ;
                 }
             }
             console.log(user)
