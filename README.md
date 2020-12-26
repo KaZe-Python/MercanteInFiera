@@ -5,6 +5,7 @@
 **Backend**
 - [ ] SETTING UP
 	- [x] REST API with FLASK
+	- [x] JavaScript Implementetion
 	- [ ] PAGE CREATION AND STYLE
 
 _More will be added as soon as new changes or ideas arrive_
