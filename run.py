@@ -15,4 +15,4 @@ def create_app(config_filename):
 
 if __name__ == "__main__":
     app = create_app("config")
-    app.run(debug=True)
+    app.run(debug=True, host='192.168.1.5')

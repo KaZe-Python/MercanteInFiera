@@ -4,14 +4,14 @@
     card the player has, else if the user
     doesn't exist the backend will make
     the user without any cards */
-    
 window.addEventListener('load', function(){
+    window.user_api_url = "http://192.168.1.5:5000/api/User"
     function PostRequestAPI(){
-        const thisForm = document.getElementById('form');
+	const thisForm = document.getElementById('form');
         thisForm.addEventListener('submit', async function(e){
             e.preventDefault();
             const formData = new FormData(thisForm).entries();
-            const response = await fetch('http://127.0.0.1:5000/api/User',{
+            const response = await fetch(window.user_api_url,{
                 method: 'POST',
                 body: JSON.stringify(Object.fromEntries(formData))
             });

@@ -2,7 +2,7 @@ let result;
 let users = Array();
 
 setInterval(function(){
-    fetch('http://127.0.0.1:5000/api/User')
+    fetch(window.user_api_url)
         .then(response => response.json())
         .then(data => result = data);
         try {

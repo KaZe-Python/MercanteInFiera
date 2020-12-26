@@ -4,7 +4,7 @@ function dealCardToPlayers(){
     let __var__ = Array();
     let result;
     let n;
-    fetch('http://127.0.0.1/api/User')
+    fetch(window.user_api_url)
         .then(response => response.json())
         .then(data => result = data);
         try{
