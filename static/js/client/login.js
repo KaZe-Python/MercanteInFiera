@@ -19,8 +19,10 @@ window.addEventListener('load', function(){
             const user = JSON.parse(result.user);
             if(user){
                 let div = document.getElementById('loginform');
+		let div_ = document.getElementById('game');
                 if(div.className === "show"){
                     div.className = "hidden";
+		    div_.className = "show";
                 }else{
                     ;
                 }

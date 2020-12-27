@@ -4,8 +4,6 @@
         <title> Login Form - MiF </title>
         <script src="/static/js/client/login.js"></script>
         <script src="/static/js/client/getDataFromAPI.js"></script>
-        <script src="/static/js/client/cardShowHandler.js"></script>
-        <script src="/static/js/client/card_click_func.js"></script>
         <link rel="stylesheet" href="/static/css/player.css">
     </head>
     <body>
@@ -18,5 +16,10 @@
                 <input type="submit" value="Accedi">
             </form>
         </div>
+	<div id="game" class="hidden" name="gamediv">
+		<!-- Game Div where cards should be showed -->
+	</div>
     </body>
+    <script src="/static/js/client/cardShowHandler.js"></script>
+    <script src="/static/js/client/card_click_func.js"></script>
 </html>

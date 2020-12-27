@@ -10,6 +10,7 @@ function addCardOnScreen(){
     const newSpan = document.createElement("span");
 
     newSpan.className = `card${window.user.card[window.user.card.length - 1]}`;
+    gameDIV.appendChild(newSpan);
 
     const card_Input = document.createElement("input");
 
@@ -19,6 +20,8 @@ function addCardOnScreen(){
     card_Input.className = "clickCard";
     card_Input.height = height;
     card_Input.width = width;
+    newSpan.appendChild(card_Input)
+    newSpan.appendChild(card_Input);
 }
 
 function removeCardOnScreen(id){
