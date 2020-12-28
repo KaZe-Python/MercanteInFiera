@@ -19,13 +19,13 @@ class UserResource(Resource):
 
         data = user_schema.load(json_data)
         if data:
-            user = User.query.filter_by(name=data.get("name"), surn=data.get("surn")).first()
+            user = User.query.filter_by(name=data.get("name"), surn=data.get("surn"), room=data.get("room")).first()
             r = user_schema.dumps(user)
             if user:    #Does User: Name, Surname exist
                 return {"message": 'User already exists', "user": r}, 400
             else:
             #User doesn't exist
-                user = User(data.get("name"), data.get("surn"), None)
+                user = User(data.get("name"), data.get("surn"), None, date.get("room"))
                 db.session.add(user)
                 db.session.commit()
                 result = user_schema.dumps(user)
@@ -38,7 +38,7 @@ class UserResource(Resource):
         
         data = user_schema.load(json_data)
         if data: #If an actual JSON data is parsed
-            user = User.query.filter_by(name=data.get("name"), surn=data.get("surn")).first()
+            user = User.query.filter_by(name=data.get("name"), surn=data.get("surn"), room=data.get("room")).first()
             if not user: #If user doesn't exist
                 return {"message": 'User does not exist'}, 400
 
@@ -52,11 +52,11 @@ class UserResource(Resource):
         if not json_data:
             return {'message': 'No input data provided'}, 400
 
-        data, errors = user_schema.load(json_data)
-        if errors:
-            return errors, 422
-        
-        user = User.query.filter_by(name=data["name"], surn=data["surn"]).delete()
+        data = user_schema.load(json_data)
+        if data:
+            user = User.query.filter_by(name=data.get("name"), surn=data.get("surn"), room=data.get("room")).delete()
+        else:
+            return {"status": 'failed', 'message': "No further info"}, 400
         db.session.commit()
 
         result = user_schema.dumps(user)

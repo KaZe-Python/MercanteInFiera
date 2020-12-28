@@ -1,11 +1,20 @@
 let result;
 let users = Array();
 
+function sleep(mil){
+	const date = Date.now();
+	let currentDate = null;
+	do{
+		currentDate = Date.now();
+	}while (currentDate - date < mil);
+}
+
 setInterval(function(){
     fetch(window.user_api_url)
         .then(response => response.json())
         .then(data => result = data);
         try {
+	    const anyCard = document.getElementById("");
 	    if(users !== null){
 		    users = Array();
 	    }
@@ -14,13 +23,13 @@ setInterval(function(){
                 v.forEach(function(a,x,y){
                     let user_ = y[x];
                     if(user_.id === window.user.id){
+			    sleep(300);
                     if(user_.card !== window.user.card){
                         let cardArray = user_.card.split(",");
                         window.user.card = cardArray;
-			console.log(window.user.card)
 			addCardOnScreen();
                     }else{
-                        console.log(window.user.card)
+			console.log("No card changes were made")
                     }
                     }else{
 			//console.log(users);
