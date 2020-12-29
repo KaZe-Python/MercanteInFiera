@@ -25,7 +25,7 @@ class UserResource(Resource):
                 return {"message": 'User already exists', "user": r}, 400
             else:
             #User doesn't exist
-                user = User(data.get("name"), data.get("surn"), None, date.get("room"))
+                user = User(data.get("name"), data.get("surn"), None, data.get("room"))
                 db.session.add(user)
                 db.session.commit()
                 result = user_schema.dumps(user)
